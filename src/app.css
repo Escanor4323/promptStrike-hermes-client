@@ -1,0 +1,11 @@
+/* app.css
+ * ─────────────────────────────────────────────────────────────
+ * Global stylesheet for hermes-client.
+ * Imports Tailwind CSS layers. Add global custom styles below
+ * the Tailwind directives as needed.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

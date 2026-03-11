@@ -1,0 +1,54 @@
+{
+	"name": "hermes-client",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "husky",
+		"lint": "eslint src/",
+		"lint:fix": "eslint src/ --fix",
+		"format": "prettier --write 'src/**/*.{svelte,ts,js,css,json}'",
+		"format:check": "prettier --check 'src/**/*.{svelte,ts,js,css,json}'",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"validate": "npm run lint && npm run format:check && npm run check"
+	},
+	"lint-staged": {
+		"src/**/*.ts": [
+			"eslint --fix --max-warnings=0 --no-warn-ignored",
+			"prettier --write"
+		],
+		"src/**/*.svelte": [
+			"eslint --fix --max-warnings=0 --no-warn-ignored",
+			"prettier --write --plugin prettier-plugin-svelte"
+		],
+		"*.{css,json,md,yaml,yml}": [
+			"prettier --write"
+		]
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-node": "^5.5.4",
+		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@typescript-eslint/eslint-plugin": "^8.57.0",
+		"@typescript-eslint/parser": "^8.57.0",
+		"autoprefixer": "^10.4.27",
+		"eslint": "^10.0.3",
+		"eslint-plugin-svelte": "^3.15.2",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.3.3",
+		"postcss": "^8.5.8",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.5.1",
+		"svelte": "^5.51.0",
+		"svelte-check": "^4.4.2",
+		"tailwindcss": "^3.4.0",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1"
+	}
+}
